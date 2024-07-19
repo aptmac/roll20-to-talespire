@@ -24,6 +24,11 @@ From your character sheet you can make rolls from the `Core` section of the char
 - A Chrome dialog should pop up asking if you want to open "TaleSpireUrlRelay". Yes you do, and you can toggle the option to "Always allow chrome-extension://[..]" and this dialog won't show up again.
 - Over in TaleSpire, your dice tray should have been populated with the roll you selected in Roll20. Pickup the dice and roll!
 
+#### Screenshot: Selected wisdom save at advantage
+
+<img src="./images/character-sheet.jpg" width="800">
+
+
 ### 2. Chrome Extension Popup
 
 From the popup you can quickly send whatever roll you want into TaleSpire, as long as it is of a valid dice type supported by the game. You can toggle Advantage/Disadvantage, and even add a name for your roll that will be displayed in the VTT.
@@ -32,3 +37,7 @@ From the popup you can quickly send whatever roll you want into TaleSpire, as lo
 - The popup allows you to type the target dice roll, toggle advantage/disadvantage, and provide a name for your roll which will be displayed in TaleSpire
 - Enter your roll information, hit submit, and fire away!
 - Note: the popup isn't that large, and it cuts off most of the Chrome dialog asking for permission when opening the TaleSpireUrlRelay. I highly suggest hitting the "Always allow chrome-extension://[..]" checkbox before hitting the "Open TaleSpireUrlRelay" button so the dialog doesn't show up again.
+
+#### Screenshot:
+
+![popup example](./images/popup.jpg)
