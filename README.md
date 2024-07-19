@@ -5,7 +5,7 @@ Motivation: My D&D group has recently made the switch from Roll20 to [TaleSpire]
 
 ## Installation
 
-- Fork, clone, or simply download the contents of this repo.
+- Fork, clone, or simply download the contents of this repo. You can download a zip using this [link](https://github.com/aptmac/roll20-to-talespire/archive/refs/heads/main.zip), and then extract the contents.
 - Load the contents of this repo as an unpacked extension. 
   - Open Google Chrome and open `chrome://extensions` in a new tab
   - Enable developer mode by hitting the toggle in the upper right corner
