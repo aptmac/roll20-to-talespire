@@ -8,14 +8,6 @@
     "default_popup": "html/popup.html",
     "default_title": "Roll20 to TaleSpire"
   },
-  "permissions": [
-    "activeTab",
-    "declarativeContent",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://app.roll20.net/editor/*"
-  ],
   "content_scripts": [
     {
       "matches": [
