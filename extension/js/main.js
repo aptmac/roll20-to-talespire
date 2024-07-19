@@ -5,6 +5,7 @@ const ROLL_TYPES = {
     Attack: "attack",
     Damage: "damage",
     Initiative: "initiative",
+    HitDice: "hit_dice",
     Unsupported: "unsupported"
 }
 
@@ -62,6 +63,9 @@ document.addEventListener('keydown', function(e) {
             case ROLL_TYPES.Initiative:
                 rollInformation = getInitiativeRollInformation(hoveredElement);
                 break;
+            case ROLL_TYPES.HitDice:
+                rollInformation = getHitDiceRollInformation();
+                break;
             case ROLL_TYPES.Ability:
                 rollInformation = getAbilityRollInformation(hoveredElement);
                 break;
@@ -103,8 +107,11 @@ document.addEventListener('keydown', function(e) {
  */
 function determineRollType(element) {
     let rollName = getRollNameFromString(element.getAttribute("name"));
+    console.warn(rollName);
     if (rollName == "initiative") {
         return ROLL_TYPES.Initiative;
+    } else if (rollName == "hit_dice") {
+        return ROLL_TYPES.HitDice;
     } else if (rollName && Object.values(ABILITY_TYPES).includes(rollName)) {
         return ROLL_TYPES.Ability;
     } else if (element.getAttribute("name").endsWith("_save")) {
@@ -198,6 +205,15 @@ function formatModifier(modifier) {
 function getInitiativeRollInformation(element) {
     let modifier = element.parentElement.getElementsByTagName("span")[0].innerText;
     return new RollInformation(ROLL_TYPES.Initiative, ROLL_TYPES.Initiative, formatRollWithModifier("d20", modifier), formatModifier(modifier));
+}
+
+/**
+ * Hit Dice Rolls
+ * name="hit_dice"
+ */
+function getHitDiceRollInformation() {
+    let hitDiceValue = document.getElementsByName("attr_hitdieroll")[0].value;
+    return new RollInformation(ROLL_TYPES.HitDice, ROLL_TYPES.HitDice, `d${hitDiceValue}`, 0);
 }
 
 /**
