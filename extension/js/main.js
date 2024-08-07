@@ -213,7 +213,8 @@ function getInitiativeRollInformation(element) {
  */
 function getHitDiceRollInformation() {
     let hitDiceValue = document.getElementsByName("attr_hitdieroll")[0].value;
-    return new RollInformation(ROLL_TYPES.HitDice, ROLL_TYPES.HitDice, `d${hitDiceValue}`, 0);
+    let modifier = document.getElementsByName("attr_constitution_mod")[0].innerText;
+    return new RollInformation(ROLL_TYPES.HitDice, ROLL_TYPES.HitDice, formatRollWithModifier(`d${hitDiceValue}`, modifier), formatModifier(modifier));
 }
 
 /**
