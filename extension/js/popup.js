@@ -1,6 +1,7 @@
 // Fetch the input data from the popup and send it to TaleSpire
 document.getElementById("submitButton").addEventListener("click", async function() {
     let roll = document.getElementById("rollInput").value
+    roll = roll.replace(/\s/g, ''); // TaleSpire does not like whitespaces in dice roll strings
     let rollName = document.getElementById("rollNameInput").value || `${roll}`;
 
     // Takes a look at the advantage toggles and determines what the roll query is
