@@ -107,7 +107,6 @@ document.addEventListener('keydown', function(e) {
  */
 function determineRollType(element) {
     let rollName = getRollNameFromString(element.getAttribute("name"));
-    console.warn(rollName);
     if (rollName == "initiative") {
         return ROLL_TYPES.Initiative;
     } else if (rollName == "hit_dice") {
@@ -267,5 +266,6 @@ function getAttackRollInformation(element) {
 function getDamageRollInformation(element) {
     let roll = element.getElementsByTagName("input")[0].value;
     modifier = parseDamageRollModifier(roll);
+    roll = roll.replace(/\s/g, ''); // TaleSpire does not like whitespaces in dice roll strings
     return new RollInformation(ROLL_TYPES.Damage, ROLL_TYPES.Damage, roll, modifier);
 }

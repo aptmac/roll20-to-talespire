@@ -1,6 +1,6 @@
 {
   "name": "Roll20 to TaleSpire",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A TaleSpire companion application, used to send dice rolls from your Roll20 character sheet directly into your TaleSpire dice tray.",
   "manifest_version": 3,
   "author": "aptmac",
